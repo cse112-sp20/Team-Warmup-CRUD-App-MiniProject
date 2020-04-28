@@ -5,7 +5,7 @@
 #### The website need to have following function:
   - Login and logout
   - Two input tags and ADD to firebase
-  - Ajax update a table/Dynamic insert row
+  - Ajax update a table / Dynamic insert and delete row
   - UPDATE and DELETE each row
 
 #### The pipeline need to test:
