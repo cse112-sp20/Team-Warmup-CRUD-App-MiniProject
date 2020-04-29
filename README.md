@@ -10,6 +10,7 @@
 
 #### The pipeline need to test:
   - Automatically trigger when push to github
+  - Automatically convert code to our standard style guides
   - End to end test for each function
 
 # Part 2: Deploy the webpage. Create API endpoint w/ data sanitization.
