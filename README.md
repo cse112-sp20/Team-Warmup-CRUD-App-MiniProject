@@ -10,8 +10,7 @@
 
 #### The pipeline need to test:
   - Automatically trigger when push to github
-  - Automatically convert code to our standard style guides
-  - End to end test for each function
+  - Style enforcing
 
 # Part 2: Deploy the webpage. Create API endpoint w/ data sanitization.
 
@@ -20,5 +19,7 @@
   - Use API endpoint instead of stright update to firebase for data santiization 
 
 #### The pipeline need to test:
+ - Auto deploy new version.
  - Test API endpoints
+ - End to end test for each function
 
