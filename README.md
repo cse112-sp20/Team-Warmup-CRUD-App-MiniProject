@@ -11,6 +11,7 @@
 #### The pipeline need to test:
   - Automatically trigger when push to github
   - Style enforcing
+  - Unit test
 
 # Part 2: Deploy the webpage. Create API endpoint w/ data sanitization.
 
