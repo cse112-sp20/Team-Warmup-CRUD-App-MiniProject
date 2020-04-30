@@ -10,7 +10,7 @@ jobs:
         -   uses: actions/checkout@v2
           
         -   name: Auto Minify
-            uses: ./.github/workflows/auto-minify/action
+            uses: ./.github/workflows/auto-minify
             with:
                 directory: 'source'
           

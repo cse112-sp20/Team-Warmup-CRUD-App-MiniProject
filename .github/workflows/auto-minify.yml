@@ -1,4 +1,4 @@
-name: "auto-minify"
+name: Auto Minify
 inputs:
     directory:
       description: "Directory that contains the files you want to minify. Defaults to current directory (.)"
