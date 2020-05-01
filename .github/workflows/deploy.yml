@@ -15,7 +15,8 @@ jobs:
               with:
                 path: deploy_static_content
             - name: Deploy to Firebase
-              script:
+              uses:
+                script:
                 firebase deploy \
                 -m "${GITHUB_SHA}" \
                 --project ${FIREBASE_PROJECT} \
