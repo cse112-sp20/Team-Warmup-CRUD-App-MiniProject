@@ -1,8 +1,9 @@
 # Deploys whenever something is pushed to master
 on: [push]
-name: Deploy Hugo to Firebase
+name: Deploy Static Content to Firebase
 jobs:
   build:
+    name: Deploy to Firebase
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
