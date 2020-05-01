@@ -1,20 +1,13 @@
 # Deploys whenever something is pushed to master
-on:
-    push:
-        branches:
-            - deploy_static_content
-
-# Deploys stastic contents to Firebase
+on: [push]
+name: Deploy Hugo to Firebase
 jobs:
-    main:
-        name: Deploy contents
-        runs-on: ubuntu-latest
-        steps:
-            - name: Check out code
-              uses: actions/checkout@v2
-              with:
-                path: deploy_static_content
-            - name: Installing Firebase tool
-              run: npm install -g firebase-tools
-            - name: Deploy to firebase
-              run: firebase deploy
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+    - uses: ryank90/action-hugo-firebase-deploy@master
+      with:
+        firebase-token: 1//0fupDYD0xWDeACgYIARAAGA8SNwF-L9IrJTIct27dWd7GGeniifaaFUuwhs_uZPWr5PAm4mXHUAnJ5JnwZteqkkJgSC7w5-gN51I
