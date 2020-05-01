@@ -13,6 +13,7 @@ jobs:
             - name: Check out code
               uses: actions/checkout@v2
               with:
+                branch: deploy_static_content
                 path: deploy_static_content
             - name: Deploy to Firebase
               uses: ./.github/workflows/auto-deploy
