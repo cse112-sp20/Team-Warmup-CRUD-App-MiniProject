@@ -26,10 +26,10 @@ output_name () {
 		in_path=$( readlink $in_dir )
 	fi
 
-	f_path=$f_dir
-	if [ ! -z $out_dir ]; then
+	f_path=$out_dir
+	:'if [ ! -z $out_dir ]; then
 		f_path="$out_dir/${f_dir#"$in_path"}"
-	fi
+	fi'
 
 	echo "$f_path/$f_name.min$f_extn" | xargs readlink -m
 }
