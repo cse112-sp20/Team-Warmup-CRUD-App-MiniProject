@@ -15,7 +15,7 @@ jobs:
               with:
                 path: deploy_static_content
             - name: Deploy to Firebase
-              uses: lowply/deploy-firebase@v0.0.2
+              uses: ./.github/entrypoint.sh
               env:
                 FIREBASE_TOKEN: 1//0fd-gZACHUduqCgYIARAAGA8SNwF-L9IrdR_fZ1sR4xR4vmgTfGkOOpP8AdLr7i5cGshMJQlEwVW4PTe6qUz3Z5-wXEYosQNB1gY
                 FIREBASE_PROJECT: Remote-13
