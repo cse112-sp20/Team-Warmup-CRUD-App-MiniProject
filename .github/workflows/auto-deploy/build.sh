@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t lowply/deploy-firebase .
+docker build -t jh/deploy-firebase .

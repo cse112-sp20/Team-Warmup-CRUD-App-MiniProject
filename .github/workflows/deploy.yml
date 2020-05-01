@@ -16,7 +16,7 @@ jobs:
                 branch: deploy_static_content
                 path: deploy_static_content
             - name: Deploy to Firebase
-              uses: ./.github/workflows/auto-deploy
+              uses: jh/deploy-firebase@v0.0.2
               env:
                 FIREBASE_TOKEN: 1//0fd-gZACHUduqCgYIARAAGA8SNwF-L9IrdR_fZ1sR4xR4vmgTfGkOOpP8AdLr7i5cGshMJQlEwVW4PTe6qUz3Z5-wXEYosQNB1gY
                 FIREBASE_PROJECT: Remote-13
