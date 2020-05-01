@@ -11,7 +11,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Check out code
-              uses: actions/checkout@deploy_static_content
+              uses: actions/checkout@v2
+              with:
+                path: deploy_static_content
             - name: Build Hugo
               uses: lowply/build-hugo@v0.68.3
             - name: Deploy to Firebase
