@@ -1,0 +1,21 @@
+# Deploys whenever something is pushed to master
+on:
+    push:
+        branches:
+            - deploy_static_content
+
+# Deploys stastic contents to Firebase
+jobs:
+    main:
+        name: Deploy contents
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out code
+              uses: actions/checkout@deploy_static_content
+            - name: Build Hugo
+              uses: lowply/build-hugo@v0.68.3
+            - name: Deploy to Firebase
+              uses: lowply/deploy-firebase@v0.0.2
+              env:
+                FIREBASE_TOKEN: 1//0fac69iPDko4ICgYIARAAGA8SNwF-L9IrixMLxw0PoVVXyn4qeh3s0uPhRxXn8Bq3vEu67uRDTjUhjNJ7CTzMAVdzHpeHeXhtr8g
+                FIREBASE_PROJECT: Remote-13
