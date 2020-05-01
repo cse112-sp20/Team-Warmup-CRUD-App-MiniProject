@@ -11,4 +11,4 @@ jobs:
         submodules: true
     - uses: ryank90/action-hugo-firebase-deploy@master
       with:
-        firebase-token: 1//0fupDYD0xWDeACgYIARAAGA8SNwF-L9IrJTIct27dWd7GGeniifaaFUuwhs_uZPWr5PAm4mXHUAnJ5JnwZteqkkJgSC7w5-gN51I
+        firebase-token: 1//0fowuyNuqjreWCgYIARAAGA8SNwF-L9IrWiWUAxQNwCC3TuV6ntVxZ4iHMznorz6NKiL3p-mty73EdQvNbk3uxjtwCLWTHU9K0Wo
