@@ -34,4 +34,4 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_USERNAME: npmTestBot
-        SLACK_ICON_EMOJI: ':coffee:'
+        SLACK_TITLE: "One or more tests failed. Commit message: "
