@@ -1,0 +1,22 @@
+<!DOCTYPE html><style>.newNameInput {
+            display: flex;
+            margin: 0 auto; 
+            width:250px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }</style><div class="navbar"><a href="#login">login</a></div><div class="newNameInput"><form id="firstNameForm"><input id="firstName" name="firstName"><br></form><form id="lastNameForm"><input id="lastName" name="lastName"></form><button id="addButton" onclick="appendNewElementFromForm()">add</button></div><div class="container"><table id="nameTable"><tr><th width="37%">First<th width="37%">Last<th width="26%">Edit</table></div><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="../../source/Table.js"></script>
