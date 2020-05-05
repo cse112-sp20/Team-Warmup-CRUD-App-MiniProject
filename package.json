@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Mini Project for Remote13",
   "main": "index.js",
+  "private":true,
   "scripts": {
   	"setup": "bash ./.github/setup.sh",
     "test": "./node_modules/.bin/jest"
@@ -20,5 +21,20 @@
   "devDependencies": {
     "jest-cli": "^25.5.3",
     "prettier": "2.0.5"
-  }
+  },
+  "release": {
+		"branches": "master",
+		"verifyConditions": [
+			"@semantic-release/github"
+		],
+		"publish": [
+			"@semantic-release/github"
+		],
+		"success": [
+			"@semantic-release/github"
+		],
+		"fail": [
+			"@semantic-release/github"
+		]
+	}
 }
