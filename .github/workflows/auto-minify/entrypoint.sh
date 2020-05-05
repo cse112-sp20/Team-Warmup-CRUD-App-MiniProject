@@ -59,7 +59,7 @@ exec_minify_cmd () {
 	out=$2
 
 	if [[ $file == *.js ]]; then
-		npx uglify-js $file -o $out -m toplevel=true,reserved=['$','require','exports']
+		npx babel-minify $file --out-file $out
 	elif [[ $file == *.html ]]; then
 		npx html-minifier --collapse-whitespace --remove-comments \
         --remove-optional-tags --remove-redundant-attributes $file -o $out
