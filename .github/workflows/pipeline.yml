@@ -14,9 +14,13 @@ jobs:
             with:
                 directory: 'site/content'
                 output: 'site/min_content'
-          
-            # Auto commits minified files to the repository
-            # Ignore it if you don't want to commit the files to the repository 
+
+    # Auto commits minified files to the repository
+    # Ignore it if you don't want to commit the files to the repository 
+    auto-commit:
+        runs-on: ubuntu-latest
+        needs: minify
+        steps:
         -   name: Auto committing minified files
             uses: stefanzweifel/git-auto-commit-action@v4.1.6
             with:
@@ -25,7 +29,7 @@ jobs:
                 branch: ${{ github.ref }}
     build:
         name: Deploy to Firebase
-        needs: minify
+        needs: auto-commit
         runs-on: ubuntu-latest
         steps:
         -   uses: actions/checkout@v1
@@ -36,7 +40,7 @@ jobs:
                 firebase-token: 1//0fowuyNuqjreWCgYIARAAGA8SNwF-L9IrWiWUAxQNwCC3TuV6ntVxZ4iHMznorz6NKiL3p-mty73EdQvNbk3uxjtwCLWTHU9K0Wo
     publish:
         name: Release
-        needs: minify
+        needs: auto-commit
         runs-on: ubuntu-18.04
         steps:
         -   name: Checkout
