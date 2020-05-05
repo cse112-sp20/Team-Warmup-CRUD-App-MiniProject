@@ -23,7 +23,7 @@
     "prettier": "2.0.5"
   },
   "release": {
-		"branches": "publish_and_release",
+		"branches": "master",
 		"verifyConditions": [
 			"@semantic-release/github"
 		],
