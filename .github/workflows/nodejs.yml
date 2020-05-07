@@ -43,6 +43,6 @@ jobs:
     steps:
     - name: Repository Dispatch  
       uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-          event-type: passed-tests
+      with:
+        token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+        event-type: passed-tests
