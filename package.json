@@ -35,6 +35,16 @@
 		],
 		"fail": [
 			"@semantic-release/github"
-		]
+    ],
+    "plugins": [
+      ["@semantic-release/commit-analyzer", {
+        "preset": "angular",
+        "releaseRules": [
+          {"scope": "no-release", "release": false},
+          {"scope": "release", "release": "minor"}
+        ]
+      }],
+      "@semantic-release/release-notes-generator"
+    ]
 	}
 }
