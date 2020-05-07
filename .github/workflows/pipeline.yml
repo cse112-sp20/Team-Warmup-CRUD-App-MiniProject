@@ -1,7 +1,9 @@
 # Github action workflow that will minify, deploy
 
-name: Pipeline (minify and deploy as of now)
-on: push
+name: Minify, Deploy, and Release
+on:
+    repository_dispatch:
+        types: passed-tests
 jobs:
     minify:
         runs-on: ubuntu-latest
