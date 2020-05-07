@@ -2,7 +2,7 @@
 
 name: Pipeline (minify and deploy as of now)
 on:
-    repository-dispatch:
+    repository_dispatch:
         types: passed-tests
 jobs:
     minify:
