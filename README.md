@@ -6,7 +6,11 @@
 3. Go to the root directory of your local repository and use the following commands: `npm run setup` and `npm install`.
 
 ## Testing
-The testing framework we have set up is [Jest](https://jestjs.io/docs/en/api). Local unit tests (anything ending in test.js) can be run if you use the `npm test` command. To test only the changes you have on your local environment, use `npm test -- -o`.
+The testing framework we have set up is [Jest](https://jestjs.io/docs/en/api) for unit tests, and Nightwatch using Selenium and Chromedriver for end-to-end tests. 
+
+Local unit tests (anything ending in test.js) can be run if you use the `npm run unit-test` command. To test only the changes you have on your local environment, use `npm run unit-test -- -o`.
+
+End-to-end tests can be run using the `npm run e2e-test` command. To run e2e tests headlessly (doesn't open up an automated browser window), use the command `npm run e2e-test -- --headless`.
 
 ![webpage view](/readme.img/basic_view.jpg)
 
