@@ -92,3 +92,5 @@ function removeRow(clicked) {
   var parent = clicked.parentNode.parentNode;
   parent.parentNode.removeChild(parent);
 }
+
+module.exports = appendNewElementFromForm;
