@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            input[type=text], select {
+                padding: 8px 17px;
+                margin: 4px;
+                display: inline-block;
+                border: 1px solid;
+                border-radius: 4px;
+            }
+    
+            label[type="formLabel"] {
+                display:inline-block;
+                width: 75px;
+            }
+        </style>
+
+        <script src="../../source/Register.js"></script>
+    </head>
+
+    <body>
+        <div>
+            <div>
+                <label for = "firstName" type="formLabel">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="First">
+            </div>
+            
+            <div>
+                <label for="lastName" type="formLabel">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Last">
+            </div>
+            
+            <div>
+                <label for="email" type="formLabel">Email</label>
+                <input type="text" id="email" name="email" placeholder="example@hmm.com">
+            </div>
+            
+            <a href="table.html">
+                
+            </a> 
+            <input type="button" value="Submit" href="table.html" onclick="submitForm()">
+        </div>
+    </body>
+</html>
