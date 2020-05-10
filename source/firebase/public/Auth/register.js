@@ -18,8 +18,16 @@ signupForm.addEventListener('submit', (e) => {
 
             // Write this user to the database. 
             writeUserData(uID, firstName, lastName, email);
+
+            // Reset the signup form. 
+            signupForm.reset();
+
+            // Redirect to the user login page. 
+            window.location.href = '../Home/home.html';
     
         })
+
+        
     }
 
     catch(err) {

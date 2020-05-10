@@ -8,33 +8,20 @@
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="home.css">
 
 <title>Remote-13</title>
 </head>
 <body>
 
-<form id="signup-form">
-<div class = "form-group">
-    <label for="firstName">Enter Your First Name</label>
-    <input type="firstName" class="form-control" id="firstName" aria-describedby="emailHelp" placeholder="First Name" required>
-</div>
-<div class = "form-group">
-    <label for="lastName">Enter Your Last Name</label>
-    <input type="lastName" class="form-control" id="lastName" aria-describedby="emailHelp" placeholder="Last Name" required>
-</div>
-<div class = "form-group">
-    <label for="exampleInputEmail1">Enter a valid Email Address</label>
-    <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-</div>
-<div class="form-group">
-    <label for="exampleInputPassword1">Create Password</label>
-    <input type="password" class="form-control" id="registerPassword" placeholder="Password" required>
-</div>
-    <button class="btn btn-primary" id="registerButton">Register</button>
-</form>
 
-
+    <div class="heading">
+        <h1>Remote-13 User</h1>
+      </div>
+    
+    <div class="btn-group-1" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-xl" id="logout">Logout</button>
+    </div> 
 
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -51,9 +38,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
 
-
 <script src="../firebase.js"></script>
-<script src="./register.js"></script>
-
+<script src="../Auth/logout.js"></script>
 </body>
 </html>
