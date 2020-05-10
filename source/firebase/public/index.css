@@ -1,0 +1,16 @@
+.heading {
+    text-align: center;
+    color: blue; 
+}
+.btn-xl {
+        padding: 1% 2%;
+        font-size: 150%;
+        border-radius: 5%;
+        width: auto;
+        color: orange;
+        background-color: blue;
+}
+
+.btn-group-1 {
+    text-align: center;
+}
