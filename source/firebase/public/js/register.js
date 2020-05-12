@@ -23,7 +23,7 @@ signupForm.addEventListener('submit', (e) => {
             signupForm.reset();
 
             // Redirect to the user login page. 
-            window.location.href = '../Home/home.html';
+            window.location.href = '../Home/table.html';
     
         })
 

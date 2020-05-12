@@ -4,17 +4,21 @@ const INPUT_FIELD_IDX = 0
 var people = [];
 
 // Append a new element using first and last name from HTML form.
-function appendNewElementFromForm(){
+function appendNewElementFromForm(uid,idToken){
     var firstNameInput = document.getElementById("firstName")
     var lastNameInput = document.getElementById("lastName")
     var table = document.getElementById("nameTable");
 
-    appendNewElement(table, firstNameInput.value, lastNameInput.value);
+    appendNewElement(table, firstNameInput.value, lastNameInput.value,uid,idToken);
 }
 
 // Append new name to given table, and add to firebase server.
-function appendNewElement(table, first, last){
+function appendNewElement(table, first, last, uid, idToken){
     if(first.length == 0 || last.length == 0){
+        return;
+    }
+
+    if(uid && idToken){
         return;
     }
 
@@ -27,7 +31,6 @@ function appendNewElement(table, first, last){
     firstInput = newReadOnlyInput(first);
     lastInput = newReadOnlyInput(last);
 
-    //Send the first and last names to the firebase server
     var req = new XMLHttpRequest();
     req.onreadystatechange = function() {
         if (req.readyState === XMLHttpRequest.DONE) {
@@ -39,9 +42,18 @@ function appendNewElement(table, first, last){
             }
         }
     };
+
+    var payload = {
+        "firstName": first,
+        "lastName": last,
+        "uid": uid,
+        "idToken": idToken
+    }
+
+
     req.open('POST', 'https://us-central1-remote-13.cloudfunctions.net/addItem', true);
     req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    req.send("firstName="+first+"&lastName="+last);
+    req.send(JSON.stringify(payload));
     
     // Put 2 readonly text fields in first 2 columns. Then give it a set of edit buttons.
     cell1.appendChild(firstInput);
@@ -50,6 +62,9 @@ function appendNewElement(table, first, last){
 
     // Reset the input form.
     resetForm();
+
+    //Send the first and last names to the firebase server
+
 }
 
 // Add new element to form, without adding to firebase
@@ -115,7 +130,7 @@ function alertContents() {
                 var lastName = person.lastName;
                 alert("in here2");
                 alert(firstName);
-                //appendNewElementNoFirebase(table, firstName, lastName);
+                appendNewElementNoFirebase(table, firstName, lastName);
             }
         } else {
             alert('There was a problem with the request.');
@@ -151,7 +166,7 @@ function editRow(clicked){
         clicked.innerText = "Edit";
         makeRowUneditable(clicked.parentNode.parentNode);
 
-        var firstName = cols[0].children[INPUT_FIELD_IDX].setAttribute("value");
+        var firstName = cols[0].children[INPUT_FIELD_IDX].inner
         alert(firstName);
         /*
         var dataIndex = row.rowIndex - 1;

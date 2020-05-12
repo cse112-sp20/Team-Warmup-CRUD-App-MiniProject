@@ -13,7 +13,7 @@ loginForm.addEventListener('submit', (e) => {
         auth.signInWithEmailAndPassword(email, password).then( (e) => {
             console.log("Sign in successful!")
 
-            window.location.href = '../Home/home.html';
+            window.location.href = '../Home/table.html';
 
         })
     }
