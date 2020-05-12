@@ -56,6 +56,7 @@ exports.addItem = functions.https.onRequest((req, res) => {
       })
     };
 
+
     const idToken = req.body.idToken;
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
@@ -76,6 +77,7 @@ exports.addItem = functions.https.onRequest((req, res) => {
 
     res.status(400).json({});
     //getAddedItem(res)
+
   });
 });
 
@@ -98,7 +100,9 @@ exports.delete = functions.https.onRequest((req, res) => {
         })
       }
       const id = req.query.id
+
       admin.database().ref(`/items/${id}/`).remove()
+
       getItemsFromDatabase(res)
     })
 });
@@ -113,6 +117,7 @@ exports.update = functions.https.onRequest((req, res) => {
         const id = req.query.id
         const firstName = req.body.firstName;
         const lastName = req.body.lastName;
+
         admin.database().ref(`/items/${id}/`).set({ firstName, lastName })
         getItemsFromDatabase(res)
       });
