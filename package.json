@@ -1,0 +1,24 @@
+{
+  "name": "cse112-mini-project",
+  "version": "1.0.0",
+  "description": "Mini Project for Remote13",
+  "main": "index.js",
+  "scripts": {
+  	"setup": "bash ./.github/setup.sh",
+    "test": "./node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cse112-sp20/Mini-project-CRUD-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cse112-sp20/Mini-project-CRUD-app/issues"
+  },
+  "homepage": "https://github.com/cse112-sp20/Mini-project-CRUD-app#readme",
+  "devDependencies": {
+    "jest-cli": "^25.5.3",
+    "prettier": "2.0.5"
+  }
+}
