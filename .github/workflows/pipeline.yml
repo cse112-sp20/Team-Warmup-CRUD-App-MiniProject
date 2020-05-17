@@ -2,8 +2,8 @@
 
 name: Minify, Deploy, and Release
 on:
-    repository_dispatch:
-        types: passed-tests
+    push: 
+        branches: master
 jobs:
     minify:
         runs-on: ubuntu-latest
@@ -54,6 +54,12 @@ jobs:
                 GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
                 #NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             run: npx semantic-release
+        -   name: Auto committing package.json version
+            uses: stefanzweifel/git-auto-commit-action@v4.1.6
+            with:
+                repository: .
+                file_pattern: package.json
+                commit_message: "Github Action: Update version #"
         #-   name: Vscode release plugin
         #    uses: JCofman/vscodeaction@master
         #    env:
