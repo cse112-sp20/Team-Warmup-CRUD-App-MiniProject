@@ -54,6 +54,8 @@ jobs:
                 GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
                 #NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             run: npx semantic-release
+        -   name: updating version in package.json
+            run: npx standard-version
         -   name: Auto committing package.json version
             uses: stefanzweifel/git-auto-commit-action@v4.1.6
             with:
