@@ -53,7 +53,7 @@ jobs:
             env:
                 GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
                 #NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-            run: npx semantic-release
+            run: npx semantic-release@latest
         #-   name: Vscode release plugin
         #    uses: JCofman/vscodeaction@master
         #    env:
