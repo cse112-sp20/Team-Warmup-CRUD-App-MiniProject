@@ -49,11 +49,17 @@ jobs:
                 node-version: 12
         -   name: Install dependencies
             run: npm install
+        -   name: Install @semantic-release/github
+            run: npm - @semantic-release/github --save-dev
         -   name: Release
             env:
                 GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
                 NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             run: npx semantic-release@latest
+        -   name: Auto committing package.json
+            uses: stefanzweifel/git-auto-commit-action@v4.1.6
+            with:
+                commit_message: "Updated package.json version"
         #-   name: Vscode release plugin
         #    uses: JCofman/vscodeaction@master
         #    env:
