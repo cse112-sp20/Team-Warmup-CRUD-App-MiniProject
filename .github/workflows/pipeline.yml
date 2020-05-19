@@ -59,21 +59,21 @@ jobs:
             with:
                 commit_message: "Updated package.json version"
 
-        publish:
-            name: Publish
-            runs-on: ubuntu-18.04
-            needs: release
-            steps:
-            -   name: Checkout
-                uses: actions/checkout@v2
-            -   name: Setup Node.js
-                uses: actions/setup-node@v1
-                with:
-                    node-version: 12
-            -   name: Install dependencies
-                run: npm install
-    
-                # Step for publishing extension to VS Marketplace
-            -   name: Vscode release plugin
-                if: ${{ needs.release.outputs.changes_detected }}
-                run: echo 'Would have published a new version'
+    publish:
+        name: Publish
+        runs-on: ubuntu-18.04
+        needs: release
+        steps:
+        -   name: Checkout
+            uses: actions/checkout@v2
+        -   name: Setup Node.js
+            uses: actions/setup-node@v1
+            with:
+                node-version: 12
+        -   name: Install dependencies
+            run: npm install
+
+            # Step for publishing extension to VS Marketplace
+        -   name: Vscode release plugin
+            if: ${{ needs.release.outputs.changes_detected }}
+            run: echo 'Would have published a new version'
