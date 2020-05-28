@@ -51,6 +51,8 @@ function appendNewElement(table, first, last, uid, idToken){
     }
 
 
+
+    
     req.open('POST', 'https://us-central1-remote-13.cloudfunctions.net/addItem', true);
     req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     req.send(JSON.stringify(payload));
